@@ -54,7 +54,9 @@ class SubmissionBase:
         if os.path.isfile(self.save_file):
             with open(self.save_file, 'rb') as f:
                 login, token = pickle.load(f)
-            reenter = input('Use token from last successful submission (%s)? (Y/n): ' % login)
+            #Modified to hide login address on Github
+            #reenter = input('Use token from last successful submission (%s)? (Y/n): ' % login)
+            reenter = input('Use token from last successful submission (#email)? (Y/n): ')
 
             if reenter == '' or reenter[0] == 'Y' or reenter[0] == 'y':
                 self.login, self.token = login, token
