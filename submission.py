@@ -56,7 +56,9 @@ class SubmissionBase:
                 login, token = pickle.load(f)
             #Modified to hide login address on Github
             #reenter = input('Use token from last successful submission (%s)? (Y/n): ' % login)
-            reenter = input('Use token from last successful submission (#email)? (Y/n): ')
+            #reenter = input('Use token from last successful submission (#email)? (Y/n): ')
+            print("Using same email & token as previously")
+            reenter = 'y'
 
             if reenter == '' or reenter[0] == 'Y' or reenter[0] == 'y':
                 self.login, self.token = login, token
